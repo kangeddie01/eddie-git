@@ -8,55 +8,52 @@ import lombok.Getter;
 @Component
 @Getter
 public class ChParam {
-	
-	
-	public String getDriverClassName() {
-		return driverClassName;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public Integer getInitialSize() {
-		return initialSize;
-	}
-
-	public Integer getMaxActive() {
-		return maxActive;
-	}
-
-	public Integer getMinIdle() {
-		return minIdle;
-	}
-
-	public Integer getMaxWait() {
-		return maxWait;
-	}
-
 	private String driverClassName;
     private String url;
+    private String user;
     private String password;
     private Integer initialSize;
     private Integer maxActive;
     private Integer minIdle;
     private Integer maxWait;
-
+    
+	public String getDriverClassName() {
+		return driverClassName;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public String getUser() {
+		return user;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public Integer getInitialSize() {
+		return initialSize;
+	}
+	public Integer getMaxActive() {
+		return maxActive;
+	}
+	public Integer getMinIdle() {
+		return minIdle;
+	}
+	public Integer getMaxWait() {
+		return maxWait;
+	}
     
     @Value("${clickhouse.driverClassName}")
     public void setDriverClassName(String driverClassName) {
         this.driverClassName = driverClassName;
     }
-
     @Value("${clickhouse.url}")
     public void setUrl(String url) {
         this.url = url;
     }
-
+    @Value("${clickhouse.user}")
+    public void seUser(String user) {
+        this.user = user;
+    }
     @Value("${clickhouse.password}")
     public void setPassword(String password) {
         this.password = password;

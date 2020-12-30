@@ -12,7 +12,12 @@ public class TestController {
 	
     @Autowired
     private TestMapper testMapper;
-    
+    @RequestMapping("/")
+   	public void index() {
+   		System.out.println("index");
+   		
+   		System.out.println(testMapper.selectData());
+   	}
     
 	@RequestMapping("/test")
 	public void test() {

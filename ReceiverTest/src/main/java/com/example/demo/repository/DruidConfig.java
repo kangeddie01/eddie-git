@@ -25,6 +25,7 @@ public class DruidConfig {
 		datasource.setMaxActive(chParam.getMaxActive());
 		datasource.setMaxWait(chParam.getMaxWait());
 		datasource.setPassword(chParam.getPassword());
+		datasource.setUsername(chParam.getUser());
 		return datasource;
 	}
 }
